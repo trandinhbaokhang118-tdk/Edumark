@@ -5,4 +5,4 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 namespace EduMark.Infrastructure;
-public static class DependencyInjection { public static IServiceCollection AddInfrastructure(this IServiceCollection s, IConfiguration c) { s.AddDbContext<EduMarkDbContext>(o => o.UseSqlite(c.GetConnectionString("EduMarkDb"))); s.AddScoped<ICourseService, CourseService>(); s.AddScoped<IEnrollmentService, EnrollmentService>(); return s; } }
+public static class DependencyInjection { public static IServiceCollection AddInfrastructure(this IServiceCollection s, IConfiguration c) { s.AddDbContext<EduMarkDbContext>(o => o.UseSqlite(c.GetConnectionString("EduMarkDb"))); s.AddScoped<ICourseService, CourseService>(); s.AddScoped<IEnrollmentService, EnrollmentService>(); s.AddHttpClient<INotificationClient, NotificationClient>(client => client.BaseAddress = new Uri(c["Services:Notification:BaseUrl"] ?? "http://localhost:5090/")); return s; } }

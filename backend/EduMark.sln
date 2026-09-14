@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduMark.Application", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduMark.Infrastructure", "src\EduMark.Infrastructure\EduMark.Infrastructure.csproj", "{B177EAEF-BE31-4426-BA47-107DF82A303F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduMark.Notification.Api", "src\EduMark.Notification.Api\EduMark.Notification.Api.csproj", "{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,18 @@ Global
 		{B177EAEF-BE31-4426-BA47-107DF82A303F}.Release|x64.Build.0 = Release|Any CPU
 		{B177EAEF-BE31-4426-BA47-107DF82A303F}.Release|x86.ActiveCfg = Release|Any CPU
 		{B177EAEF-BE31-4426-BA47-107DF82A303F}.Release|x86.Build.0 = Release|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Debug|x64.Build.0 = Debug|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Debug|x86.Build.0 = Debug|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Release|x64.ActiveCfg = Release|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Release|x64.Build.0 = Release|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Release|x86.ActiveCfg = Release|Any CPU
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +94,6 @@ Global
 		{A31E5971-D404-4D0F-BF4C-6A2616195650} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{F703783C-B299-434B-BE4E-A33066F500A0} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{B177EAEF-BE31-4426-BA47-107DF82A303F} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{8A12CBB0-D3F1-4A63-B29D-A77A4457B42F} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 EndGlobal
