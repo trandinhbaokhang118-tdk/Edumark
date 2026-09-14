@@ -1,0 +1,6 @@
+@EduMark.Api_HostAddress = http://localhost:5253
+
+GET {{EduMark.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,2 @@
+namespace EduMark.Domain.Entities;
+public sealed class Course { public Guid Id { get; set; } = Guid.NewGuid(); public string Title { get; set; } = string.Empty; public string Slug { get; set; } = string.Empty; public string Description { get; set; } = string.Empty; public decimal Price { get; set; } public bool IsPublished { get; set; } public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow; public ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>(); }

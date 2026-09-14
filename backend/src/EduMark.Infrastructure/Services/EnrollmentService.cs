@@ -1,0 +1,7 @@
+using EduMark.Application.Contracts;
+using EduMark.Application.Interfaces;
+using EduMark.Domain.Entities;
+using EduMark.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+namespace EduMark.Infrastructure.Services;
+public sealed class EnrollmentService(EduMarkDbContext db) : IEnrollmentService { public async Task<EnrollmentResponse?> EnrollAsync(Guid courseId, CreateEnrollmentRequest r, CancellationToken ct) { var course = await db.Courses.FirstOrDefaultAsync(x => x.Id == courseId && x.IsPublished, ct); if (course is null) return null; var email = r.StudentEmail.Trim().ToLowerInvariant(); if (await db.Enrollments.AnyAsync(x => x.CourseId == courseId && x.StudentEmail == email, ct)) throw new InvalidOperationException("Student is already enrolled in this course."); var e = new Enrollment { CourseId = courseId, StudentEmail = email }; db.Enrollments.Add(e); await db.SaveChangesAsync(ct); return new(e.Id, courseId, course.Title, email, e.EnrolledAtUtc); } public async Task<IReadOnlyList<EnrollmentResponse>> GetByCourseAsync(Guid id, CancellationToken ct) => await db.Enrollments.AsNoTracking().Where(x => x.CourseId == id).OrderByDescending(x => x.EnrolledAtUtc).Select(x => new EnrollmentResponse(x.Id, x.CourseId, x.Course.Title, x.StudentEmail, x.EnrolledAtUtc)).ToListAsync(ct); }

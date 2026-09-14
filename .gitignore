@@ -1,0 +1,13 @@
+# IDE and build artifacts
+.vs/
+**/bin/
+**/obj/
+
+# Local SQLite data
+*.db
+*.db-shm
+*.db-wal
+
+# Local secrets and user-specific settings
+appsettings.Local.json
+*.user
